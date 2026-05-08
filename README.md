@@ -313,9 +313,8 @@ aws eks delete-access-entry \
  
 ---
  
-<div align="center">
-Built with ❤️ by **Gerald** · [LinkedIn](https://linkedin.com) · [GitHub](https://github.com/goti13)
- 
-*This project was built as part of a hands-on DevOps engineering lab focusing on real-world CI/CD patterns used in production environments.*
- 
-</div>
+<p align="center">
+Built by <strong>Gerald</strong> · <a href="https://linkedin.com">LinkedIn</a> · <a href="https://github.com/goti13">GitHub</a>
+<br/>
+<em>This project was built as part of a hands-on DevOps engineering lab focusing on real-world CI/CD patterns used in production environments.</em>
+</p>

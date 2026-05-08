@@ -30,35 +30,9 @@ This project showcases end-to-end DevOps engineering skills across the full depl
  
 ## 🏗 Architecture
  
-```
-┌──────────────┐      git push       ┌──────────────────┐
-│  Developer   │ ──────────────────> │   GitHub Repo    │
-│  Workstation │                     │   (main branch)  │
-└──────────────┘                     └───────┬──────────┘
-                                             │
-                                             │ triggers workflow
-                                             ▼
-                                     ┌──────────────────┐
-                                     │  GitHub Actions  │
-                                     │                  │
-                                     │  ① Checkout      │
-                                     │  ② AWS Auth      │
-                                     │  ③ ECR Login     │
-                                     │  ④ Docker Build  │
-                                     │  ⑤ ECR Push      │
-                                     │  ⑥ kubectl Apply │
-                                     │  ⑦ Rollout Wait  │
-                                     └───────┬──────────┘
-                                             │
-                                ┌────────────┼────────────┐
-                                │            │            │
-                                ▼            ▼            ▼
-                          ┌──────────┐ ┌──────────┐ ┌──────────┐
-                          │   ECR    │ │   EKS    │ │   ELB    │
-                          │  Image   │ │  Pods    │ │  :80     │
-                          │ :git-sha │ │ Rolling  │ │  Public  │
-                          └──────────┘ └──────────┘ └──────────┘
-```
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/25bcb5a2-86f7-42a1-aee7-1209c28d7b9a" />
+
+
  
 ### Key Design Decisions
  
@@ -167,19 +141,8 @@ The workflow defined in `.github/workflows/deploy.yaml` executes these steps on 
 ⑦ Wait for rollout       — blocks until all pods are healthy (or fails pipeline)
 ```
  
-```mermaid
-graph LR
-    A[git push] --> B[Checkout]
-    B --> C[AWS Auth]
-    C --> D[ECR Login]
-    D --> E[Docker Build & Push]
-    E --> F[kubeconfig Update]
-    F --> G[kubectl apply]
-    G --> H[Rollout Status]
-    H --> I{Healthy?}
-    I -->|Yes| J[✅ Deploy Complete]
-    I -->|No| K[❌ Pipeline Fails]
-```
+<img width="1918" height="820" alt="image" src="https://github.com/user-attachments/assets/30672862-3d53-40bc-9661-3bea16cdf4a6" />
+
  
 ---
  

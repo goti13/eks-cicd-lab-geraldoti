@@ -1,17 +1,15 @@
 # 🚀 EKS CI/CD Pipeline — GitHub Actions → ECR → EKS
- 
-<div align="center">
+
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-EKS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-ECR-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Deployed-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-20--alpine-339933?style=for-the-badge&logo=node.js&logoColor=white)
- 
+
 **A production-grade, fully automated CI/CD pipeline that builds, pushes, and deploys a containerized Node.js application to Amazon EKS on every `git push`.**
- 
+
 [Architecture](#-architecture) · [Quick Start](#-quick-start) · [Pipeline Walkthrough](#-pipeline-walkthrough) · [Deployment Demo](#-deployment-demo) · [Cleanup](#-cleanup)
- 
-</div>
+
 ---
  
 ## 📌 What This Project Demonstrates
